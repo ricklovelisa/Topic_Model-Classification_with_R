@@ -4,7 +4,7 @@ library(topicmodels)
 library(RODBC)
 library(jiebaR)
 
-conn <- odbcConnect(dsn = '192.168.0.22', uid = 'root', pwd = 'mysql')
+conn <- odbcConnect(dsn = 'localhost', uid = 'root', pwd = 'root')
 data <- sqlQuery(conn, "SELECT i_id, t_article, i_tag FROM shangshi_zixun where i_tag in ('A', 'B', 'C', 'D', 'E', 'F', 
                  'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R','S', '-1', '0')", stringsAsFactors = F)
 cutter <- worker(type = 'mix')
